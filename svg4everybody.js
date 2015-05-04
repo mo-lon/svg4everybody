@@ -53,7 +53,7 @@
 
 					xhr.open('GET', url_root);
 
-					xhr.onload = onload;
+					xhr.onload = onload.bind(xhr);
 
 					xhr.send();
 				}
@@ -72,7 +72,19 @@
 		requestAnimationFrame(onframe);
 	}
 
-	if (IE9TO11) {
+	function isJellyBean() {
+		var isWebkit = 'WebkitAppearance' in document.documentElement.style,
+            isChromium = !!window.chrome,
+            isSafari = /constructor/i.test(window.HTMLElement);
+
+        if (isWebkit && !isChromium && !isSafari) {
+            return true;
+        } else {
+            return false;
+        }
+	}
+
+	if (IE9TO11 || isJellyBean()) {
 		onframe();
 	}
 })(
