@@ -7,6 +7,6 @@
 	"contributors" : [],
 	"dependencies" : [],
 	"main": "svg4everybody.js",
-	"repository" : {"type": "git", "url": "git@github.com:jonathantneal/svg4everybody.git"},
-	"version" : "1.0.0"
+	"repository" : {"type": "git", "url": "git@github.com:mo-lon/svg4everybody.git"},
+	"version" : "1.0.1"
 }
